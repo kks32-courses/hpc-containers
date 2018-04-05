@@ -63,7 +63,7 @@ singularity create --size 2048 lammps-mpi.img`
 * Bootstrap the lammps configuration file created in the previous step.
 
 ```
-sudo singularity boostrap lammps-mpi.img lammps-mpi.cfg
+sudo singularity bootstrap lammps-mpi.img lammps-mpi.cfg
 ```
 > **Note** Bootstrapping step requires `root` access.
 

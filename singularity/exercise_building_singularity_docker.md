@@ -74,6 +74,6 @@ Create and import Singularity file.
 
 ```shell
 singularity create --size 2048 lammps.img
-sudo singularity boostrap lammps.img lammps.cfg
+sudo singularity bootstrap lammps.img lammps.cfg
 ```
 

@@ -107,7 +107,7 @@ The main content of the bootstrap file is broken into sections.
 
 `%runscript`:  does not get executed during bootstrapping. Instead it gets persisted within the container to a file called `/singularity` which is the execution driver when the container image is run (either via the singularity run command or via executing the container directly).
 
-`%test`: at the end of boostrapping process to validate the container. If you want to bootstrap without running tests, you can do so with the --notest argument.
+`%test`: at the end of bootstrapping process to validate the container. If you want to bootstrap without running tests, you can do so with the --notest argument.
 
 
 ### Best Practices for Bootstrapping

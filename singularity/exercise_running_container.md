@@ -122,7 +122,7 @@ srun -Atraining -pbiocloud-normal singularity run ~/lammps.img -i ~/in.mixer
 
 ## Writing in the container
 
-While it is discouraged to make tweaks on the fly to containers (you should properly define all edits to the container in a boostrap specification file, shown later) you can add `--writable` to any command to write inside the container. Assuming we have our `centos.img` on our local resource with `sudo`, let’s
+While it is discouraged to make tweaks on the fly to containers (you should properly define all edits to the container in a bootstrap specification file, shown later) you can add `--writable` to any command to write inside the container. Assuming we have our `centos.img` on our local resource with `sudo`, let’s
 try to make a `/data` directory:
 
 ```shell
