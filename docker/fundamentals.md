@@ -21,3 +21,6 @@ A container is launched by running an image. An *image* is an executable package
 
 A *container* is a runtime instance of an image--what the image becomes in memory when executed (that is, an image with state, or a user process). You can see a list of your running containers with the command, docker ps, just as you would in Linux.
 
+Docker containers are built off Docker images. Since images are read-only, Docker adds a read-write file system over the read-only file system of the image to create a container.
+
+![Docker container layers](container-layer.png)
