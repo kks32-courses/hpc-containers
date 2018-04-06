@@ -61,8 +61,10 @@ Singularity passes the Host environment to the container.
 singularity exec ./centos.img env
 singularity exec ./centos.img env | wc -l
 env -i singularity exec ./centos.img env | wc -l
-env -i FOO=BAR singularity exec ./centos.img en
+env -i FOO=BAR singularity exec ./centos.img env
 ```
+
+> Hint: Might need path of singularity, use `which singularity` to find the path for the last 2 commands.
 
 ## Directory access
 By default Singularity tries to create a seamless user experience between the host and the container. To do this, Singularity makes various locations accessible within the container automatically. For example, the user’s home directory is always bound into the container as is `/tmp` and `/var/tmp`. Additionally your current working directory (`cwd/pwd`) is also bound into the container iff it is not an operating system directory or already accessible via another mount. For almost all cases, this will work flawlessly as follows:
@@ -97,10 +99,10 @@ On a research cluster, you probably want to access locations with big datasets, 
 
 ```shell
 # On Host
-sudo mkdir /lammps
-sudo wget -O /lammps/in.granregion.mixer https://goo.gl/axtEQ7
+sudo mkdir ./lammps
+sudo wget -O ./lammps/in.granregion.mixer https://goo.gl/axtEQ7
 # Launch container
-singularity shell --bind /lammps:/lammps ./centos.img
+singularity shell --bind ./lammps:/lammps ./centos.img
 Singularity centos.img:~> ls -alh /lammps
 #in.granregion.mixer
 ```
@@ -112,7 +114,7 @@ LAMMPS is a popular Molecular Dynamics code, a Singularity image for LAMMPS code
 wget -O ./in.granregion.mixer https://goo.gl/axtEQ7
 singularity run ./lammps.img -i $HOME/in.granregion.mixer
 # or to run the example problem from the Host /lammp directory
-singularity run --bind /lammps:/lammps ./lammps.img -i /lammps/in.granregion.mixer
+singularity run --bind ./lammps:/lammps ./lammps.img -i /lammps/in.granregion.mixer
 ```
 
 To run LAMMPS on Cambridge HPC
