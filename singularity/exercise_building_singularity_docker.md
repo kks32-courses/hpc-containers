@@ -12,7 +12,7 @@ singularity shell docker://centos:latest
 Create a Singularity container image, and import a docker container.
 
 ```shell
-singularity create centos.img
+singularity image.create centos.img
 singularity import centos.img docker://centos:latest
 singularity exec centos.img echo "Hello Dinosaur!"
 ```
@@ -73,7 +73,7 @@ make -j serial |& tee log.make_serial
 Create and import Singularity file.
 
 ```shell
-singularity create --size 2048 lammps.img
-sudo singularity bootstrap lammps.img lammps.cfg
+singularity image.create --size 2048 lammps.img
+sudo singularity build lammps.img lammps.cfg
 ```
 

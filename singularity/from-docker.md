@@ -17,7 +17,7 @@ singularity exec docker://ubuntu:latest echo "Hello Cambridge!"
 To import a docker image to a singularity image:
 
 ```
-singularity create --size 4000 tensorflow.img
+singularity image.create --size 4000 tensorflow.img
 singularity import tensorflow.img docker://tensorflow/tensorflow:latest
 ```
 
