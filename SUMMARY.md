@@ -1,7 +1,7 @@
 # Summary
 
 * [Docker](docker/docker.md)
-  * [Fundamental concepts](docker/docker-concepts.md)
+  * [Fundamentals](docker/docker-fundamentals.md)
   * [Docker install](docker/docker-install.md)
   * [Commands](docker/docker-commands.md)
 * [Singularity](singularity/singularity.md)
