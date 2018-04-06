@@ -64,12 +64,12 @@ make -j serial |& tee log.make_serial
 singularity image.create --size 2048 ./lammps.img`
 ```
 
-* Bootstrap the lammps configuration file created in the previous step.
+* Build the lammps configuration file created in the previous step.
 
 ```
-sudo singularity bootstrap ./lammps.img lammps.cfg
+sudo singularity build ./lammps.img lammps.cfg
 ```
-> **Note** Bootstrapping step requires `root` access.
+> **Note** Building step requires `root` access.
 
 ## Running the container image
 
