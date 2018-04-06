@@ -35,47 +35,32 @@ Well, since the VM has a virtual operating system of its own, the hypervisor pla
 
 ![VM](vm.png)
 
-## Images and containers
-A container is launched by running an image. An *image* is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.
 
-A *container* is a runtime instance of an image--what the image becomes in memory when executed (that is, an image with state, or a user process). You can see a list of your running containers with the command, docker ps, just as you would in Linux.
+### Container
+Unlike a VM which provides hardware virtualization, a container provides operating-system-level virtualization by abstracting the “user space”. You’ll see what I mean as we unpack the term container.
 
+For all intent and purposes, containers look like a VM. For example, they have private space for processing, can execute commands as root, have a private network interface and IP address, allow custom routes and iptable rules, can mount file systems, and etc.
 
-## Docker useful commands
-### Clone a docker container
-* `docker pull <image>:latest`. The tag `latest` is not required. Clone the container appropriate for your use case, for eg., use `centos` for the latest version of CentOS. CentOS and most other linux operating systems are available as official repositories from the [Docker Hub](https://hub.docker.com).
+The one big difference between containers and VMs is that containers *share* the host system’s kernel with other containers.
 
-* To use non-official docker images, you need to add the organisation before the docker image, for example to pull the latest version of `tensorflow`: `docker pull tensorflow/tensorflow:latest`
+![Docker](docker.png)
 
-### Using a docker image
-* The docker image can be used directly from the Docker Hub
-* To launch the `centos`  docker container, run `docker run -ti tensorflow/tensorflow:latest /bin/bash`
+This diagram shows you that containers package up just the user space, and not the kernel or virtual hardware like a VM does. Each container gets its own isolated user space to allow multiple containers to run on a single host machine. We can see that all the operating system level architecture is being shared across containers. The only parts that are created from scratch are the bins and libs. This is what makes containers so lightweight.
 
-### Running a container with a local volume mounted
-* `docker run -ti -v /home/<user>/<mounted-folder>/:/<path-in-container> cbgeo/cb-geo:latest`
+#### Where does Docker come in?
+Docker is an open-source project based on Linux containers. It uses Linux Kernel features like namespaces and control groups to create containers on top of an operating system.
 
-### Connecting to a running container
-* `docker exec -ti <containerid> /bin/bash`
+Containers are far from new; Google has been using their own container technology for years. Others Linux container technologies include Solaris Zones, BSD jails, and LXC, which have been around for many years.
 
-### Start / stop a container
-* `docker start <containerid>`
-* `docker stop <containerid>`
+So why is Docker all of a sudden gaining steam?
 
-### Delete a container
-* `docker rm <containerid>`, stop the container before deleting it. 
-* To delete all docker containers `docker rm $(docker ps -a -q)`
+1. *Ease of use*: Docker has made it much easier for anyone — developers, systems admins, architects and others — to take advantage of containers in order to quickly build and test portable applications. It allows anyone to package an application on their laptop, which in turn can run unmodified on any public cloud, private cloud, or even bare metal. The mantra is: “build once, run anywhere.”
 
-### Exposing ports
-* To connect to a particular port (for e.g., 3000) in docker container to port `3000` in localhost:
-	`docker run -ti -p 3000:3000 tensorflow/tensorflow`
+2. *Speed*: Docker containers are very lightweight and fast. Since containers are just sandboxed environments running on the kernel, they take up fewer resources. You can create and run a Docker container in seconds, compared to VMs which might take longer because they have to boot up a full virtual operating system every time.
 
-### To login as root
-* Launching docker as root user: `docker exec -u 0 -ti <containerid> /bin/bash`
+3. *Docker Hub*: Docker users also benefit from the increasingly rich ecosystem of Docker Hub, which you can think of as an “app store for Docker images.” Docker Hub has tens of thousands of public images created by the community that are readily available for use. It’s incredibly easy to search for images that meet your needs, ready to pull down and use with little-to-no modification.
 
-### Creating an image from a docker file
-
-* To build an image from docker file run as root `docker build -t "tensorflow/tensorflow" /path/to/Dockerfile`
-* `docker history` will show you the effect of each command has on the overall size of the file.
+4. *Modularity and Scalability*: Docker makes it easy to break out your application’s functionality into individual containers. For example, you might have your Postgres database running in one container and your Redis server in another while your Node.js app is in another. With Docker, it’s become easier to link these containers together to create your application, making it easy to scale or update components independently in the future.
 
 
 # Docker learning materials
