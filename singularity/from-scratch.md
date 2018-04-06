@@ -4,11 +4,11 @@ The first step in creating a new image is to create the image file. This is a la
 
 The image is created with
 
-    singularity create mycontainer.img
+    singularity image.create mycontainer.img
 
 which, by default, creates an image that contain up to 768Mib. To create an image that can hold more, use the `--size` option
 
-    singularity create --size 2048 mycontainer.img
+    singularity image.create --size 2048 mycontainer.img
 
 Creating an image requires root access! Therefore we create the image on a machine on which we have root/sudo access - usually your personal workstation or laptop, and in this case you can use the virtual machines at workshop.hpc.cam.ac.uk.
 

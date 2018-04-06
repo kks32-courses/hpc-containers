@@ -2,7 +2,7 @@
 
 ## Singularity configuration file
 
-We will build a container image for LAMMPS code using CentOS as the base image. A template Singularity configuration file is available in the `/home` directory.
+We will build a container image for LAMMPS code using CentOS as the base image. A template Singularity configuration file is shown below:
 
 > Create/use the lammps template configuration file `lammps.cfg`
 
@@ -61,13 +61,13 @@ make -j serial |& tee log.make_serial
 * Create a container called `lammps` and modify the size to 2048 MiB.
 
 ```
-singularity create --size 2048 /local/lammps.img`
+singularity image.create --size 2048 ./lammps.img`
 ```
 
 * Bootstrap the lammps configuration file created in the previous step.
 
 ```
-sudo singularity bootstrap /local/lammps.img lammps.cfg
+sudo singularity bootstrap ./lammps.img lammps.cfg
 ```
 > **Note** Bootstrapping step requires `root` access.
 
