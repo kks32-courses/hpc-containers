@@ -43,6 +43,10 @@
 
 # Docker cheat sheet
 
+[A beginners' guide to Docker, Container and VMs](https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b)
+
+[Docker getting started](https://docs.docker.com/get-started/)
+
 [Docker self-paced training](https://training.docker.com/self-paced-training)
 
 [Docker quick reference sheet](docker-quick-ref.pdf)
