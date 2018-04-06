@@ -6,3 +6,5 @@ To install on your own machine, follow the instructions in the [singularity user
 
 Installing singularity on your own machine (where you have root/sudo access) will let you create new images either from scratch or from the software that you have installed.
 
+You might also need `squashfs-tools` to be installed to build Singularity images. This is not required for running images.
+
