@@ -23,6 +23,8 @@ Once logged in you can run `/opt/lammps/src/lmp_serial -i /opt/lammps/examples/g
 ### Running a container with a local volume mounted
 * `docker run -ti -v /home/<user>/<mounted-folder>/:/<path-in-container> cbgeo/lammps:latest`
 
+Users running Linux distributions with SELinux enabled (Redhat, CentOS, Fedora, and others) will need to add the `:z` option to all subsequent host volume mounts `-v`, e.g.: `docker run -it -v $(pwd):/home/cbgeo/research/lem-shared/:z quay.io/cbgeo/lem:latest /bin/bash.`
+
 ### Connecting to a running container
 * `docker exec -ti <containerid> /bin/bash`
 
