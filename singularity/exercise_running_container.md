@@ -95,7 +95,7 @@ singularity exec ./centos.img cat $HOME/hello.txt
 Hello World
 ```
 
-On a research cluster, you probably want to access locations with big datasets, and then write results too. For this, you will want to bind a folder to the container. Here, we are binding our `/lammps` `/lammps` in the image, and listing the contents to show it worked. We use the command `-B` or `--bind` to do this.
+On a research cluster, you probably want to access locations with big datasets, and then write results too. For this, you will want to bind a folder to the container. Here, we are binding our local `./lammps` to `/lammps` in the image, and listing the contents to show it worked. We use the command `-B` or `--bind` to do this.
 
 ```shell
 # On Host
@@ -109,6 +109,11 @@ Singularity centos.img:~> ls -alh /lammps
 
 ## Running LAMMPS code
 LAMMPS is a popular Molecular Dynamics code, a Singularity image for LAMMPS code is available in the home directory. To execute the `lammps` directory code:
+
+```shell
+singularity pull --name lammps.img shub://cb-geo/lammps-container
+```
+To clone the lammps container
 
 ```shell
 wget -O ./in.granregion.mixer https://goo.gl/axtEQ7
