@@ -4,6 +4,7 @@
   * [Fundamentals](docker/fundamentals.md)
   * [Installation](docker/install.md)
   * [Get started](docker/get-started.md)
+  * [Dockerfile](docker/dockerfile.md)
   * [Commands](docker/commands.md)
 * [Singularity](singularity/singularity.md)
   * [Installing](singularity/installing.md)
