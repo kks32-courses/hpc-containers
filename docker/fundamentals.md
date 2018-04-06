@@ -24,3 +24,4 @@ A *container* is a runtime instance of an image--what the image becomes in memor
 Docker containers are built off Docker images. Since images are read-only, Docker adds a read-write file system over the read-only file system of the image to create a container.
 
 ![Docker container layers](container-layer.png)
+
