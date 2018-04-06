@@ -74,5 +74,3 @@ So why is Docker all of a sudden gaining steam?
 [Docker self-paced training](https://training.docker.com/)
 
 [Docker quick reference sheet](docker-quick-ref.pdf)
-
-![Docker cheat sheet](docker-cheat-sheet.png)

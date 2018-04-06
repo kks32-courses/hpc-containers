@@ -1,9 +1,10 @@
 # Summary
 
 * [Docker](docker/docker.md)
-  * [Fundamentals](docker/docker-fundamentals.md)
-  * [Docker install](docker/docker-install.md)
-  * [Commands](docker/docker-commands.md)
+  * [Fundamentals](docker/fundamentals.md)
+  * [Installation](docker/install.md)
+  * [Get started](docker/get-started.md)
+  * [Commands](docker/commands.md)
 * [Singularity](singularity/singularity.md)
   * [Installing](singularity/installing.md)
   * [Running a container](singularity/running.md)

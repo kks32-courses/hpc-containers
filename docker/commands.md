@@ -34,3 +34,6 @@
 * To build an image from docker file run as root `docker build -t "tensorflow/tensorflow" /path/to/Dockerfile`
 * `docker history` will show you the effect of each command has on the overall size of the file.
 
+
+![Docker cheat sheet](docker-cheat-sheet.png)
+
