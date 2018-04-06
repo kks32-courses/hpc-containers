@@ -47,7 +47,7 @@
 
 [Docker getting started](https://docs.docker.com/get-started/)
 
-[Docker self-paced training](https://training.docker.com/self-paced-training)
+[Docker self-paced training](https://training.docker.com/)
 
 [Docker quick reference sheet](docker-quick-ref.pdf)
 
