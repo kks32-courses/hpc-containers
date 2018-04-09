@@ -39,7 +39,7 @@ Well, since the VM has a virtual operating system of its own, the hypervisor pla
 ### Container
 Unlike a VM which provides hardware virtualization, a container provides operating-system-level virtualization by abstracting the “user space”. You’ll see what I mean as we unpack the term container.
 
-For all intent and purposes, containers look like a VM. For example, they have private space for processing, can execute commands as root, have a private network interface and IP address, allow custom routes and iptable rules, can mount file systems, and etc.
+For all intent and purposes, containers look like a VM. For example, they have private space for processing, can execute commands as root (maybe), have a private network interface and IP address, allow custom routes and iptable rules, can mount file systems, and etc.
 
 The one big difference between containers and VMs is that containers *share* the host system’s kernel with other containers.
 
