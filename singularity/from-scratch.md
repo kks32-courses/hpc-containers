@@ -15,7 +15,7 @@ Creating an image requires root access! Therefore we create the image on a machi
 
 The newly created image will be empty, and to make it useful we need to bootstrap (again, only possible with root privilege) the image by
 
-    singularity bootstrap mycontainer.img centos.cfg
+    singularity build mycontainer.img centos.cfg
 
 where `mycontainer.img` is a fresh image and the file `centos.cfg` contains the definitions used to build the image. To build a centos 7 image we use:
 
